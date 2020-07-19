@@ -16,15 +16,14 @@ const store = (function() {
 
 
   function filterByRating(val) {
-    this.items = this.items.filter( itm => {
-      return itm.rating >= val;
-    });
+    this.filter = val;
   }
 
   return {
     items: [],
     adding: false,
     error: null,
+    filter: 0,
 
     addItem,
     findById,

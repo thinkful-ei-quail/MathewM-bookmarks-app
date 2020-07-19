@@ -152,14 +152,12 @@ const bookmarkList = (function() {
   }
 
 
-  function handleFilterByRatingClicked() {
     $('.js-header-select').on('change', function(event) {
       event.preventDefault();
       const val = $(event.currentTarget).val();
       store.filterByRating(val);
       render();
     });
-  }
 
 
   function getItemIdFromElement(item) {
@@ -182,7 +180,9 @@ const bookmarkList = (function() {
     handleDeleteBookmarkClicked();
 
     //get current items
-    let items = store.items;
+    let items = store.items.filter(itm => {
+      return itm.rating >= parseInt(store.filter);
+    });
 
     // create element string
     const bookmarkString = generateBookmarkString(items);
@@ -196,7 +196,6 @@ const bookmarkList = (function() {
   function bindEventListeners() {
     handleExpandViewClicked();
     handleCreateBookmarkClicked();
-    handleFilterByRatingClicked();
     handleCloseBookmarkClicked();
   }
 
