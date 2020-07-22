@@ -151,14 +151,14 @@ const bookmarkList = (function() {
     });
   }
 
-
+  function handleFilter(){
     $('.js-header-select').on('change', function(event) {
       event.preventDefault();
       const val = $(event.currentTarget).val();
       store.filterByRating(val);
       render();
     });
-
+  }
 
   function getItemIdFromElement(item) {
     return $(item)
@@ -194,6 +194,7 @@ const bookmarkList = (function() {
 
 
   function bindEventListeners() {
+    handleFilter();
     handleExpandViewClicked();
     handleCreateBookmarkClicked();
     handleCloseBookmarkClicked();
