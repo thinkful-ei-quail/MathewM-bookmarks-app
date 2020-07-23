@@ -1,5 +1,6 @@
 'use strict';
 
+
 const store = (function() {
 
   const addItem = function(item) {
@@ -14,7 +15,6 @@ const store = (function() {
     this.items = this.items.filter(item => item.id !== id);
   };
 
-
   function filterByRating(val) {
     this.filter = val;
   }
@@ -24,6 +24,7 @@ const store = (function() {
     adding: false,
     error: null,
     filter: 0,
+    expandedIds: [],
 
     addItem,
     findById,

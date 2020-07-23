@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/thinkful-ei-quail/MathewM-bookmarks-app/issues"
   },
-  "homepage": "https://github.com/thinkful-ei-quail/MathewM-bookmarks-app#readme"
+  "homepage": "https://github.com/thinkful-ei-quail/MathewM-bookmarks-app#readme",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }

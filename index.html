@@ -11,29 +11,9 @@
 <body>
   <div class="container">
     <header role="banner" aria-live="polite">
-      <a href="index.html"><h1>My<br>Bookmarks</h1></a>
-      <form id="js-create-bookmark-form">
-        <button aria-label="click to create a bookmark" class="header-button js-header-button" type="submit" >CREATE A BOOKMARK</button>
-      </form>
-      <form id="js-filter-bookmark-form" class="filter-bookmark-form">
-        <fieldset>
-          <legend>Filter By</legend>
-            <label for="rating-filter">
-              <select aria-label="select a rating" class="header-select js-header-select" aria-activedescendant="rating-filter">
-                <option role="option" value="1" id="rating-filter" aria-label="select star rating">Rating</option>
-                <option aria-label="select 5 star rating" role="option" value="5" id="rating-filter-5" >5 stars</option>
-                <option  aria-label="select 4 star rating" role="option" value="4" id="rating-filter-4">4 stars</option>
-                <option  aria-label="select 3 star rating" role="option" value="3" id="rating-filter-3">3 stars</option>
-                <option  aria-label="select 2 star rating" role="option" value="2" id="rating-filter-2">2 stars</option>
-                <option aria-label="select 1 star rating" role="option" value="1" id="rating-filter-1" >1 star</option>
-              </select>
-            </label>
-        </fieldset>
-      </form>
+      <h1>My Bookmarks</h1>
     </header>
     <main role="main" class="bookmark-panel js-bookmark-panel">
-      <ul class="bookmark-list js-bookmark-list" aria-live="polite">
-      </ul>
     </main>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
