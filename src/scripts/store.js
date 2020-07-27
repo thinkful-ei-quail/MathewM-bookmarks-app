@@ -1,6 +1,5 @@
 'use strict';
 
-
 const store = (function() {
 
   const addItem = function(item) {

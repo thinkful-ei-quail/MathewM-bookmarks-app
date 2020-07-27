@@ -160,24 +160,21 @@ const bookmarkList = (function () {
   }
 
   function handleDeleteBookmarkClicked() {
-    $('.js-bookmark-list').on(
-      'click',
-      '.js-delete-bookmark-button',
-      (event) => {
-        const id = $(event.currentTarget.parentElement.parentElement).data(
-          'item-id'
-        );
-        event.preventDefault();
-        api.deleteItem(id, () => {
-          store.findAndDelete(id);
-          render();
-        });
-      }
+    $('.js-bookmark-list').on('click','.js-delete-bookmark-button',(event) => {
+      const id = $(event.currentTarget.parentElement.parentElement).data(
+        'item-id'
+      );
+      event.preventDefault();
+      api.deleteItem(id, () => {
+        store.findAndDelete(id);
+        render();
+      });
+    }
     );
   }
 
   function handleFilter() {
-    $('.js-header-select').on('change', function (event) {
+    $(document).on('change','.js-header-select', function (event) {
       event.preventDefault();
       const val = $(event.currentTarget).val();
       store.filterByRating(val);
@@ -185,9 +182,9 @@ const bookmarkList = (function () {
     });
   }
 
-  function getItemIdFromElement(item) {
-    return $(item).closest('.js-bookmark-list-items').data('item-id');
-  }
+  //function getItemIdFromElement(item) {
+    //return $(item).closest('.js-bookmark-list-items').data('item-id');
+  //}
 
   function render() {
     const list = `<ul class="bookmark-list js-bookmark-list" aria-live="polite">
