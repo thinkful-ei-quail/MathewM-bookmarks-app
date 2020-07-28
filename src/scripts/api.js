@@ -26,16 +26,17 @@ const api = (function() {
         desc: desc,
         rating: rating
       });
-    let myHeaders = new Headers();
-    myHeaders.append('title',`${newItem.title}`);
-    myHeaders.append('url', `${newItem.url}`);
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+
     let requestOptions = {
       method: 'POST',
-      header: myHeaders,
+      headers: myHeaders,
+      body: newItem,
       redirect: 'follow'
     };
       
-    fetch('https://thinkful-list-api.herokuapp.com/mathewmurray/bookmarks', requestOptions)
+    fetch(BASE_URL+'/bookmarks', requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -56,7 +57,7 @@ const api = (function() {
       redirect: 'follow'
     };
     
-    fetch('https://thinkful-list-api.herokuapp.com/mathewmurray/bookmarks' + id, requestOptions)
+    fetch(BASE_URL +'/bookmarks' + id, requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -75,7 +76,7 @@ const api = (function() {
       redirect: 'follow'
     };
     
-    fetch("https://thinkful-list-api.herokuapp.com/mathewmurray/bookmarks" + id, requestOptions)
+    fetch(BASE_URL + '/bookmarks' + id, requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
